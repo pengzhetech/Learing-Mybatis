@@ -1,0 +1,30 @@
+<inventory>
+    <book year="2000">
+        <title>Snow</title>
+        <author>Alex</author>
+        <pulisher>China</pulisher>
+        <isbn>08124748</isbn>
+        <price>14.98</price>
+    </book>
+    <book year="2023">
+        <title>Snow2</title>
+        <author>Alex2</author>
+        <pulisher>China2</pulisher>
+        <isbn>08124748</isbn>
+        <price>14.98</price>
+    </book>
+    <book year="2001">
+        <title>Snow3</title>
+        <author>Alex3</author>
+        <pulisher>China3</pulisher>
+        <isbn>08124748</isbn>
+        <price>14.98</price>
+    </book>
+    <book year="20001">
+        <title>Snow4</title>
+        <author>Alex4</author>
+        <pulisher>China4</pulisher>
+        <isbn>08124748</isbn>
+        <price>14.98</price>
+    </book>
+</inventory>
