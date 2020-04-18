@@ -26,4 +26,11 @@ public interface AuthorMapper {
     List<Author> selectAuthorList();
 
     void insertAuthorNoPrimaryKey(Author author);
+
+    void insertAuthorWithPrimaryKey(Author author);
+
+    void updateAuthor(Author author);
+
+    void deleteAuthor(Author author);
+
 }

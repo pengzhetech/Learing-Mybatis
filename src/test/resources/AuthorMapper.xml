@@ -11,8 +11,20 @@
               SELECT * FROM tb_author ;
     </select>
 
-    <insert id="insertAuthorNoPrimaryKey">
-  insert into tb_author (id,username,password,email)
-  values (#{id},#{username},#{password},#{email})
+    <insert id="insertAuthorNoPrimaryKey" parameterType="com.javaman.mybatis.pojo.Author">
+  INSERT into tb_author (id,username,password,email) values (#{id},#{username},#{password},#{email})
 </insert>
+
+    <insert id="insertAuthorWithPrimaryKey" parameterType="com.javaman.mybatis.pojo.Author" useGeneratedKeys="true"
+            keyProperty="id">
+  INSERT into tb_author (username,password,email) values (#{username},#{password},#{email})
+</insert>
+
+    <update id="updateAuthor" parameterType="com.javaman.mybatis.pojo.Author">
+        UPDATE tb_author SET username = #{username} WHERE id = #{id}
+     </update>
+
+    <delete id="deleteAuthor" parameterType="com.javaman.mybatis.pojo.Author">
+        DELETE FROM tb_author WHERE id = #{id}
+    </delete>
 </mapper>
