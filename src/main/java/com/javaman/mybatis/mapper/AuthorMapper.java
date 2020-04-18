@@ -24,4 +24,6 @@ public interface AuthorMapper {
      * @return
      */
     List<Author> selectAuthorList();
+
+    void insertAuthorNoPrimaryKey(Author author);
 }
