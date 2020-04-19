@@ -5,14 +5,33 @@
 <mapper namespace="com.javaman.mybatis.mapper.AuthorMapper">
 
     <select id="selectAuthor" resultType="com.javaman.mybatis.pojo.Author">
-        SELECT * FROM tb_author where id=1;
+        SELECT *
+        FROM tb_author
+        where id = 1;
     </select>
     <select id="selectAuthorList" resultType="com.javaman.mybatis.pojo.Author">
-              SELECT * FROM tb_author ;
+        SELECT *
+        FROM tb_author;
     </select>
 
     <insert id="insertAuthorNoPrimaryKey">
-  insert into tb_author (id,username,password,email)
-  values (#{id},#{username},#{password},#{email})
-</insert>
+        insert into tb_author (id, username, password, email)
+        values (#{id}, #{username}, #{password}, #{email})
+    </insert>
+
+
+    <insert id="batchInsert" parameterType="java.util.List">
+        <selectKey resultType="java.lang.Integer" keyProperty="id"
+                   order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT into tb_author (username, password, email)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.username}, #{item.password},
+            #{item.email}
+            )
+        </foreach>
+    </insert>
 </mapper>

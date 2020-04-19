@@ -33,4 +33,6 @@ public interface AuthorMapper {
 
     void deleteAuthor(Author author);
 
+    void batchInsert(List<Author> authors);
+
 }

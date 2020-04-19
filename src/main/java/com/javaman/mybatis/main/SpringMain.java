@@ -13,6 +13,7 @@ public class SpringMain {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-mybatis.xml");
         AuthorDao authorDao = applicationContext.getBean("userDao", AuthorDao.class);
+        authorDao.batchInsert();
         System.out.println(authorDao.select());
     }
 
