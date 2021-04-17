@@ -21,10 +21,10 @@
 
 
     <insert id="batchInsert" parameterType="java.util.List">
-        <selectKey resultType="java.lang.Integer" keyProperty="id"
+     <!--   <selectKey resultType="java.lang.Integer" keyProperty="id"
                    order="AFTER">
             SELECT LAST_INSERT_ID()
-        </selectKey>
+        </selectKey>-->
         INSERT into tb_author (username, password, email)
         values
         <foreach collection="list" item="item" index="index" separator=",">

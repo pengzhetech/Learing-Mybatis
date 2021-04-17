@@ -23,7 +23,7 @@ public class AuthorDao {
 
     public void batchInsert() {
         List<Author> authors = new ArrayList<Author>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 2; i++) {
             Author author = new Author();
             author.setEmail("luanma.com");
             author.setPassword("12312");
